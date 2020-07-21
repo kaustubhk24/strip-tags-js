@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Strip tags from Text</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        
+
+<style>
+label { font-weight: bold; }
+            html, body, .container-fluid {
+                height: 100%;
+                min-height: 100%;
+            }
+            textarea.form-control {
+                height: 100%;
+                width: 100%;
+                min-height: 100%;
+            }
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+    </head>
+<body>
+
+
+
+<div class="section">
+
+
+   
+    <div class="container-fluid" style=" background: #DDDDDD">
+       <div class="row">
+           <div class="col-lg-12 jumbotron text-center">
+               <h1>Strip Tags</h1>
+               <p>Enter raw input to see output</p> 
+           </div>
+       </div>
+       <div class="row" style="background: #CCCCCC;">
+           <div class="col-lg-6">
+               <label for="input">Input:</label>
+               <textarea class="form-control"  onfocus="this.value=''" onkeyup="stripTags()" id="input">
+               </textarea>
+           </div>
+           <div class="col-lg-6">
+               <label for="output">Output:</label>
+               <textarea readonly class="form-control" id="output"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+<div class="py-5 text-center">
+    <br><br><br><br><br><br>
+
+    Powered by JustInClicks.com
+    <br><br><br><br><br><br>
+</div>
+
+<script>
+     $(document).ready(function(){
+    var textareaHeight = $(window).height();
+    $(".form-control").height(textareaHeight - 30);
+  });
+</script>
+
+
+<script>
+function stripTags()
+{
+
+var inputVal=document.getElementById('input').value;
+
+var output=document.getElementById('output');
+
+var text= inputVal.replace(/<\/?[^>]+(>|$)/g, "");
+
+
+output.value=text;
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
